@@ -38,9 +38,9 @@ The program is designed to reward constructive engagement with sustainable econo
 
 ---
 
-## What this mission means for Ethos-32B
+## What this mission means for Ethos ESI
 
-Ethos-32B is our first flagship ESI model. It embodies this mission in its training focus (sustainable economics, renewable energy, green finance, just transition) and in how we ship it: transparent documentation here, committee-reviewed data philosophy, and **hosted-only** access so we can steward safety and fairness at the edge.
+**Ethos ESI** is our first flagship ESI model. It embodies this mission in its training focus (sustainable economics, renewable energy, green finance, just transition) and in how we ship it: transparent documentation here, committee-reviewed data philosophy, and **hosted-only** access so we can steward safety and fairness at the edge.
 
 ---
 

@@ -1,6 +1,6 @@
 # Sample training data
 
-This directory will contain **50–100 representative examples** from the Ethos-32B training corpus — enough to illustrate format, tone, and review standards without exposing the full dataset.
+This directory will contain **50–100 representative examples** from the Ethos ESI training corpus — enough to illustrate format, tone, and review standards without exposing the full dataset.
 
 ---
 

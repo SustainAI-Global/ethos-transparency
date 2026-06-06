@@ -1,16 +1,18 @@
-# Ethos-32B Transparency
+# Ethos ESI Transparency
 
-**Ethos-32B** is SustainAI Global's **Ethical Specialized Intelligence (ESI)** model — a 32B-parameter language model aligned for sustainable economics, renewable energy, green finance, and a just transition. Its ethical foundation is [The Charter for Beneficial Intelligence](CHARTER.md): ten principles governing how Ethos reasons and serves. This public repository documents **how and why** we build Ethos: methodology, values, architecture, access policy, and transparency artifacts.
+**Ethos ESI** (Ethical Specialized Intelligence) is SustainAI Global's specialist AI for sustainable economics, renewable energy, green finance, and a just transition. Its ethical foundation is [The Charter for Beneficial Intelligence](CHARTER.md): ten principles governing how Ethos reasons and serves. This public repository documents **how and why** we build Ethos: methodology, values, architecture, access policy, and transparency artifacts.
 
 **SustainAI Global** is a Texas nonprofit corporation (501(c)(3) pending) dedicated to public-good AI. Learn more at [sustainai.global](https://sustainai.global/).
 
+> **Canonical source:** Technical architecture, training pipelines, and deployment details live in the private [`ethos-esi`](https://github.com/SustainAI-Global/ethos-esi) repo. This repository is a **read-only mirror** of approved public artifacts.
+
 ---
 
-## What is Ethos-32B?
+## What is Ethos ESI?
 
-Ethos-32B (ESI) is a fine-tuned specialist built on [Qwen/Qwen3-32B-FP8](https://huggingface.co/Qwen/Qwen3-32B-FP8) (Apache 2.0). It is designed to reason ethically about jobs-first growth, truly green systems, and human–AI partnership — not to replace human judgment in high-stakes decisions.
+Ethos ESI is a fine-tuned specialist built on an **open-licensed Qwen3-class base** (Apache 2.0). It is designed to reason ethically about jobs-first growth, truly green systems, and human–AI partnership — not to replace human judgment in high-stakes decisions.
 
-**v1** includes the fine-tuned core model, an agent layer, and private-beta hosted chat. API access is available under signed agreements. Application repos (economics, jobs, content tools) live separately and are not part of this repository.
+**v1** includes all three architecture layers: the fine-tuned core model, an agent layer (skills, tools, humility/deferral), and a hosted **Ethos API** plus private-beta chat. API access is available under signed agreements. Application repos (economics, jobs, content tools) live separately and connect via the standard Ethos API.
 
 ---
 
@@ -29,7 +31,7 @@ Ethos-32B (ESI) is a fine-tuned specialist built on [Qwen/Qwen3-32B-FP8](https:/
 | [data/sample/](data/sample/README.md) | Representative sample data (when published) |
 | [config/](config/README.md) | Skeleton training config placeholders |
 
-**Not in this repo:** training code, raw datasets, model weights, agent/backend implementation, or infrastructure secrets. Those remain in a separate private development repository by invitation.
+**Not in this repo:** training code, raw datasets, model weights, agent/backend implementation, infrastructure secrets, or provider-specific runbooks. Those remain in separate private repositories by invitation.
 
 ---
 
@@ -37,8 +39,8 @@ Ethos-32B (ESI) is a fine-tuned specialist built on [Qwen/Qwen3-32B-FP8](https:/
 
 | Asset | Status | Access |
 |-------|--------|--------|
-| Full training dataset (`ethos-training-data-v1`) | Planned on [Hugging Face](https://huggingface.co/) — not published yet | Public when released |
-| Model weights (`ethos-32b`) | Private Hugging Face — not published | **Hosted only** — no local downloads |
+| Full training dataset (`ethos-training-data-v1`) | [`sustainai-global/ethos-training-data-v1`](https://huggingface.co/datasets/sustainai-global/ethos-training-data-v1) on Hugging Face | Public when published |
+| Model weights (`ethos-esi`) | Private Hugging Face — not published | **Hosted only** — no local downloads |
 | Sample examples | [data/sample/](data/sample/README.md) | 50–100 representative rows when ready |
 
 Users interact with Ethos through **hosted chat** and **API** only. See [USAGE.md](USAGE.md) for access tiers and agreements.

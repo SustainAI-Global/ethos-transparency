@@ -1,6 +1,8 @@
-# Architecture — Ethos-32B (public overview)
+# Architecture — Ethos ESI (public overview)
 
-This document describes the **high-level, public-safe** architecture of Ethos-32B v1. It explains how components fit together without exposing private infrastructure, training commands, or backend implementation details.
+This document describes the **high-level, public-safe** architecture of **Ethos ESI** (Ethical Specialized Intelligence) v1. It explains how components fit together without exposing private infrastructure, training commands, provider accounts, or backend implementation details.
+
+**Canonical technical architecture** lives in the private [`ethos-esi`](https://github.com/SustainAI-Global/ethos-esi) repository. This file is a **sanitized public mirror** — update it only when reviewed for release.
 
 For access and deployment policy, see [USAGE.md](USAGE.md).
 
@@ -9,19 +11,21 @@ For access and deployment policy, see [USAGE.md](USAGE.md).
 ## Design goals
 
 - **Specialist, not generalist** — depth in sustainable economics, energy, finance, and transition policy
+- **Composite architecture** — a fine-tuned core model plus an agent layer that can defer on out-of-scope or high-stakes tasks
 - **Hosted stewardship** — safety, updates, and fair access at the serving layer
 - **Phased capability** — core language skills first, then tools, routing, and preference alignment
 - **Renewable-aware development** — minimize and disclose energy footprint as we scale
 
 ---
 
-## Base model and fine-tuning
+## Product name and base model (public)
 
-| Component | Choice |
-|-----------|--------|
-| Base model | [Qwen/Qwen3-32B-FP8](https://huggingface.co/Qwen/Qwen3-32B-FP8) (Apache 2.0) |
-| Adaptation | **QLoRA** fine-tuning on domain-aligned instruction data |
-| Product name | **Ethos-32B (ESI)** |
+| Use | Name |
+|-----|------|
+| Product / chat / API | **Ethos ESI** |
+| Private weights storage | `sustainai-global/ethos-esi` on Hugging Face (not distributed) |
+
+We do **not** put parameter counts in the product name, model card title, or user-facing docs. Ethos ESI is fine-tuned via **QLoRA** on an **open-licensed Qwen3-class base** (Apache 2.0). The specific base size is a technical implementation choice that may change between checkpoint versions without a rebrand.
 
 Fine-tuning produces the **core Ethos model** — the specialist weights that encode the [Ten Principles](CHARTER.md) and domain focus. Weights remain **private** and are served only through our hosted stack (see [USAGE.md](USAGE.md)).
 
@@ -29,40 +33,52 @@ Fine-tuning produces the **core Ethos model** — the specialist weights that en
 
 ## Three layers
 
+End users and external applications interact through the **Ethos API and chat** (Layer 3). They do not call model providers or training infrastructure directly.
+
 ```
-┌─────────────────────────────────────────────────────────┐
-│  Layer 3 — Hosted chat & API (public access surface)    │
-│  Invitation / agreements · safety · rate limits         │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│  Layer 2 — Agent layer                                  │
-│  Routing · tools · humility / deferral · context          │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│  Layer 1 — Core model (Ethos-32B fine-tuned weights)    │
-│  Qwen3-32B-FP8 + QLoRA · ESI alignment                  │
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────┐
+│  Layer 3 — Ethos API & chat (public access surface)                  │
+│  Hosted chat · OpenAI-compatible API · auth & rate limits            │
+│  → standard interface for beta testers, apps, and signed API clients │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 2 — Agent layer                                               │
+│  Skills · tool calling · multi-turn · humility / deferral routing    │
+│  → delegates when Ethos is out of scope or evidence is insufficient  │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 1 — Core model (Ethos ESI)                                    │
+│  Fine-tuned specialist · Charter · system prompt · LoRA adapter      │
+└──────────────────────────────────────────────────────────────────────┘
+
+Clients  →  Ethos API / chat  →  Agent  →  Core model (hosted)
+                              ↘  External models when needed (delegation)
 ```
 
 ### Layer 1 — Core model
 
-The fine-tuned 32B model is the reasoning engine for ESI behavior: the [Ten Principles](CHARTER.md), jobs-first framing, systems thinking, and domain vocabulary for green economics.
+The fine-tuned Ethos ESI model is the deep domain expert: [Ten Principles](CHARTER.md), jobs-first framing, systems thinking, and vocabulary for green economics, renewable energy, green finance, and just transition.
 
 ### Layer 2 — Agent layer
 
-The agent layer sits above the core model and handles:
+The agent sits between the API and the core model and handles:
 
+- **Skills** — reusable workflows for consistent behavior
 - **Tool calling** (where enabled in training phase)
 - **Routing** — when to answer, when to narrow scope, when to defer
 - **Humility** — surfacing uncertainty and recommending human or expert follow-up
+- **Synthesis** — coherent Ethos-voice answers when external models contributed materially
 
-Implementation details of agents and backends are not published in this repository.
+Implementation details of agents, routing policies, and provider integrations are not published in this repository.
 
-### Layer 3 — Hosted chat and API
+### Layer 3 — Ethos API and chat
 
-Users interact only through **hosted chat** (private beta; invitation via [sustainai.global](https://sustainai.global/)) and **API** (signed agreements). There is no public weight download.
+Users and approved applications connect through **one standard Ethos interface** — not separate provider endpoints.
+
+| Surface | v1 |
+|---------|-----|
+| **Chat** | Private beta; invitation via [sustainai.global](https://sustainai.global/) |
+| **API** | Signed agreements and contracts only |
+
+SustainAI application repos (economics, jobs, content, etc.) live in **separate repositories** and connect via the Ethos API under approved agreements.
 
 ---
 
@@ -74,8 +90,6 @@ Training and evaluation emphasize:
 - **Renewable energy** — deployment, grids, storage, and transition pathways
 - **Green finance** — risk, disclosure, and capital aligned with climate goals
 - **Just transition** — workers, regions, and institutions through structural change
-
-Application-specific products (economics tools, jobs platforms, content workflows) ship in **separate repositories**, not here.
 
 ---
 
@@ -95,8 +109,8 @@ Evaluation methodology and published metrics are **forthcoming**; see [MODEL_CAR
 ## Data pipeline (public summary)
 
 - Target corpus on the order of **8k–25k** high-quality examples (not millions of noisy rows)
-- Mix of **synthetic generation** with **committee review** before inclusion and public release
-- Full dataset planned as **`ethos-training-data-v1`** on Hugging Face when published
+- Predominantly **first-party research articles** from the private research pipeline, plus handwritten seeds and approved supplements — all with **committee review** before inclusion
+- Full dataset: [`sustainai-global/ethos-training-data-v1`](https://huggingface.co/datasets/sustainai-global/ethos-training-data-v1) on Hugging Face
 - Representative samples only in [data/sample/](data/sample/README.md)
 
 See [ETHICAL_GUIDELINES.md](ETHICAL_GUIDELINES.md) for philosophy and governance.
@@ -105,10 +119,10 @@ See [ETHICAL_GUIDELINES.md](ETHICAL_GUIDELINES.md) for philosophy and governance
 
 ## Development environment (public)
 
-- **Alignment and iteration** on local **solar-powered** development hardware (Mac Mini class)
+- **Alignment and iteration** on local **solar-powered** development hardware where feasible
 - **GPU training** requires additional renewable capacity; we are **seeking funding and partners** for renewable GPU hours rather than defaulting to unconstrained fossil-grid burst training
 
-We do not publish cloud provider accounts, internal hostnames, or operational runbooks in this repo.
+We do not publish cloud provider accounts, internal hostnames, cost projections, or operational runbooks in this repo.
 
 ---
 
@@ -116,11 +130,12 @@ We do not publish cloud provider accounts, internal hostnames, or operational ru
 
 The following stay in private development environments:
 
-- Full training scripts and hyperparameter sweeps
+- Full training scripts, hyperparameter sweeps, and provider-specific runbooks
 - Raw or pre-committee datasets
 - Production API keys, secrets, and infra-as-code
 - Model checkpoint distribution beyond private Hugging Face storage
 - Experiment logs and internal evaluation dashboards
+- Specific base model sizes, hosting vendors, and training platform choices
 
 ---
 

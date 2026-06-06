@@ -1,6 +1,6 @@
 # Usage and access policy
 
-Ethos-32B is **not distributed as downloadable weights**. SustainAI Global hosts the model and controls access through **chat** and **API** surfaces so we can meet nonprofit stewardship, safety, and fairness goals.
+Ethos ESI is **not distributed as downloadable weights**. SustainAI Global hosts the model and controls access through **chat** and **API** surfaces so we can meet nonprofit stewardship, safety, and fairness goals.
 
 Program details and invitations: [sustainai.global](https://sustainai.global/)
 
@@ -10,7 +10,7 @@ Program details and invitations: [sustainai.global](https://sustainai.global/)
 
 | Principle | Policy |
 |-----------|--------|
-| Model weights | **Always private** — stored on private Hugging Face (`ethos-32b`, not public) |
+| Model weights | **Always private** — stored on private Hugging Face (`sustainai-global/ethos-esi`, not public) |
 | End-user access | **Hosted chat** and **API only** — no local model downloads |
 | Open weights | **Not offered** — users cannot pull checkpoints for self-hosting |
 | Transparency | Methodology and data philosophy published here; full dataset on HF when live |
@@ -28,7 +28,7 @@ Private weight storage is an **internal artifact** for serving infrastructure. I
 | Availability | Private beta — by **invitation** |
 | How to request access | Through [sustainai.global](https://sustainai.global/) |
 | Early access | **Tier 3 (Green Steward) and above** receive early **chat** access as tiers are rolled out on the website |
-| What you get | Web-based conversation with Ethos-32B via the agent and safety stack |
+| What you get | Web-based conversation with Ethos ESI via the agent and safety stack |
 
 Chat access does not grant API keys, weight files, or rights to resell model outputs as a hosted service.
 
@@ -42,6 +42,7 @@ Chat access does not grant API keys, weight files, or rights to resell model out
 |--------|--------|
 | Requirement | **Signed agreement or contract** only |
 | Use cases | Approved integrations aligned with mission (education, research partners, green enterprise tools, etc.) |
+| Interface | OpenAI-compatible **Ethos API** — one standard endpoint for approved apps |
 | Self-serve keys | Not available from this repository or public signup |
 
 Contact **[ai@sustainai.global](mailto:ai@sustainai.global)** for API partnership inquiries.
@@ -77,9 +78,9 @@ The [Green Points](https://sustainai.global/) program on sustainai.global reward
 
 **v1 includes:**
 
-- Fine-tuned Ethos-32B core model (private weights)
-- Agent layer for routing and emerging tool use
-- Private-beta hosted chat
+- Fine-tuned Ethos ESI core model (private weights)
+- Agent layer for skills, routing, and emerging tool use
+- Standard Ethos API + private-beta hosted chat
 - API under signed agreements (select partners)
 
 **v1 does not include:**

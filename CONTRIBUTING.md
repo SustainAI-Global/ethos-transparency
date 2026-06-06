@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for interest in **Ethos-32B transparency** and [SustainAI Global](https://sustainai.global/). This repository is the **public documentation** home for methodology and values — not the private codebase where model weights and training pipelines are built.
+Thank you for interest in **Ethos ESI transparency** and [SustainAI Global](https://sustainai.global/). This repository is the **public documentation** home for methodology and values — not the private codebase where model weights and training pipelines are built.
 
 ---
 

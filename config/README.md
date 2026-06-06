@@ -31,7 +31,7 @@ Full training execution remains in the private development repository by invitat
 
 ## Public references
 
-- Base model: [Qwen/Qwen3-32B-FP8](https://huggingface.co/Qwen/Qwen3-32B-FP8)
+- Base model: open-licensed **Qwen3-class** base (Apache 2.0) — specific size documented only in private implementation configs
 - Adaptation approach: **QLoRA** fine-tuning (see [ARCHITECTURE.md](../ARCHITECTURE.md))
 - Tooling (planned documentation): **Unsloth** — skeleton config forthcoming
 

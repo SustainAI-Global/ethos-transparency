@@ -2,7 +2,7 @@
 
 > **Status:** Draft pending — will be published here before private beta.
 
-The complete system prompt for Ethos-32B (ESI) will be released in this file when we open private-beta hosted chat. Publishing it here supports transparency and reproducibility of **behavioral intent**, without releasing model weights.
+The complete system prompt for **Ethos ESI** will be released in this file when we open private-beta hosted chat. Publishing it here supports transparency and reproducibility of **behavioral intent**, without releasing model weights.
 
 Until then, the following outline describes the alignment structure the prompt will encode. **This is not the prompt text** — only a public summary. The full canonical principles are in [CHARTER.md](CHARTER.md).
 
@@ -27,7 +27,7 @@ The system prompt will encode [The Charter for Beneficial Intelligence](CHARTER.
 
 ### ESI domain emphasis
 
-Ethos-32B applies the Charter in specialized domains. Training and routing additionally reinforce:
+Ethos ESI applies the Charter in specialized domains. Training and routing additionally reinforce:
 
 - **Jobs-first** — prioritize human agency, meaningful work, and just transition in economic reasoning
 - **Systems thinking** — connect energy, economy, finance, and institutions; avoid single-factor slogans

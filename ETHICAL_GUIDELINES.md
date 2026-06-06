@@ -1,6 +1,6 @@
 # Ethical Guidelines — Training and alignment
 
-These principles govern how SustainAI Global builds **Ethos-32B (ESI)** and what we publish in this transparency repository. They apply to data, training phases, and hosted access — not to undisclosed private experiments.
+These principles govern how SustainAI Global builds **Ethos ESI** and what we publish in this transparency repository. They apply to data, training phases, and hosted access — not to undisclosed private experiments.
 
 The **Ten Principles of Ethical Intelligence** in [CHARTER.md](CHARTER.md) are the canonical ethical foundation for ESI. The sections below describe how we operationalize that charter in training, data, and deployment.
 

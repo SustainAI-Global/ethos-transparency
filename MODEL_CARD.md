@@ -1,4 +1,4 @@
-# Model Card — Ethos-32B (ESI)
+# Model Card — Ethos ESI
 
 A **public philosophy** model card for transparency. This is not a weights card — checkpoints are private and hosted only. Numeric evaluation results will be added when our methodology is published.
 
@@ -10,19 +10,20 @@ Repository home: [README.md](README.md) · SustainAI: [sustainai.global](https:/
 
 | Field | Value |
 |-------|--------|
-| **Model name** | Ethos-32B (ESI — Ethical Specialized Intelligence) |
+| **Model name** | **Ethos ESI** (Ethical Specialized Intelligence) |
 | **Organization** | [SustainAI Global](https://sustainai.global/) (Texas nonprofit, 501(c)(3) pending) |
 | **Version** | v1 (private beta) |
-| **Base model** | [Qwen/Qwen3-32B-FP8](https://huggingface.co/Qwen/Qwen3-32B-FP8) |
+| **Base model** | Open-licensed **Qwen3-class** base (Apache 2.0) — specific size is a technical implementation detail, not part of the product name |
 | **Base license** | Apache 2.0 (base only; Ethos adaptations are not redistributed as weights) |
 | **Fine-tuning** | QLoRA supervised fine-tuning on domain-aligned instruction data |
 | **Access** | Hosted chat + API only — see [USAGE.md](USAGE.md) |
+| **Weights storage** | Private Hugging Face [`sustainai-global/ethos-esi`](https://huggingface.co/sustainai-global/ethos-esi) — not distributed |
 
 ---
 
 ## Intended use
 
-Ethos-32B is intended to support **reasoning and explanation** in:
+Ethos ESI is intended to support **reasoning and explanation** in:
 
 - **Sustainable economics** — systems, incentives, and job-aware growth
 - **Renewable energy** — transition pathways, deployment tradeoffs, grid concepts
@@ -52,8 +53,8 @@ Ethos-32B is intended to support **reasoning and explanation** in:
 | Topic | Approach |
 |-------|----------|
 | **Scale** | Approximately **8k–25k** curated examples — quality over quantity |
-| **Composition** | Synthetic generation plus human and **committee review** before acceptance |
-| **Transparency** | Full corpus planned as public dataset **`ethos-training-data-v1`** on Hugging Face when published |
+| **Composition** | First-party research articles, handwritten seeds, and approved supplements — all with **committee review** before acceptance |
+| **Transparency** | Full corpus as public dataset [`sustainai-global/ethos-training-data-v1`](https://huggingface.co/datasets/sustainai-global/ethos-training-data-v1) on Hugging Face |
 | **Samples** | 50–100 representative examples in [data/sample/](data/sample/README.md) when ready |
 | **What we avoid** | Scraped noise at web scale, unchecked synthetic dumps, or undisclosed private corpora |
 
@@ -70,7 +71,7 @@ Training and serving apply the Charter with ESI domain emphasis (see [SYSTEM_PRO
 - **Jobs-first** — favor outcomes that sustain meaningful work and just transition
 - **Systems thinking** — connect economic, energy, and social layers
 
-The **agent layer** reinforces routing and deferral so the core model does not overclaim authority in production chat.
+The **agent layer** (Layer 2) reinforces routing and deferral so the core model does not overclaim authority in production chat.
 
 ---
 
@@ -115,7 +116,7 @@ We are finalizing evaluation methodology aligned with ESI goals (not only generi
 - Domain rubrics (economics, energy, finance, transition)
 - Safety and refusal behavior summaries
 - Humility / deferral spot checks
-- Comparison notes vs. base Qwen3-32B-FP8 (qualitative where appropriate)
+- Qualitative comparison notes vs. the base model (where appropriate)
 
 **No private evaluation numbers are published in this card.** Results will appear here and on [sustainai.global](https://sustainai.global/) when ready.
 
@@ -126,9 +127,9 @@ We are finalizing evaluation methodology aligned with ESI goals (not only generi
 | Artifact | Public? |
 |----------|---------|
 | This model card & docs | Yes |
-| Training dataset (full) | Planned — Hugging Face `ethos-training-data-v1` |
+| Training dataset (full) | [`ethos-training-data-v1`](https://huggingface.co/datasets/sustainai-global/ethos-training-data-v1) on Hugging Face |
 | Sample rows | Planned — [data/sample/](data/sample/README.md) |
-| Model weights | **No** — private HF, hosted inference only |
+| Model weights | **No** — private HF `ethos-esi`, hosted inference only |
 
 ---
 

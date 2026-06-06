@@ -10,7 +10,7 @@ Explore our work at [sustainai.global](https://sustainai.global/).
 
 ## AI that unlocks human potential
 
-General intelligence scattered across ad platforms has not delivered broad prosperity. We believe the next wave is **specialized, values-aligned models** — like Ethos-32B — that help policymakers, entrepreneurs, educators, and communities reason about:
+General intelligence scattered across ad platforms has not delivered broad prosperity. We believe the next wave is **specialized, values-aligned models** — like **Ethos ESI** — that help policymakers, entrepreneurs, educators, and communities reason about:
 
 - Sustainable economics and circular systems
 - Renewable energy deployment and grid transition

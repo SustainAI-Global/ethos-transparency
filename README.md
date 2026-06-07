@@ -72,4 +72,6 @@ Website: [https://sustainai.global/](https://sustainai.global/)
 
 ## License
 
-Documentation and transparency artifacts in this repository are released under the [MIT License](LICENSE), Copyright SustainAI Global.
+Documentation and transparency artifacts in this repository — including [The Charter for Beneficial Intelligence](CHARTER.md) — are published so the public can see **what we are doing and why**, not as open material for reuse or adaptation.
+
+They are licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](LICENSE) (CC BY-NC-ND 4.0), Copyright SustainAI Global. You may read and share with attribution for non-commercial purposes. Commercial use and derivative works require written permission from SustainAI Global.

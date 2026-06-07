@@ -66,4 +66,4 @@ Website: [https://sustainai.global/](https://sustainai.global/)
 
 ## License
 
-By contributing documentation to this repository, you agree that your contributions are licensed under the same [MIT License](LICENSE) as the project, unless otherwise stated in writing by SustainAI Global.
+By contributing documentation to this repository, you agree that your contributions are licensed under the same [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](LICENSE) (CC BY-NC-ND 4.0) license as the project, unless otherwise stated in writing by SustainAI Global.

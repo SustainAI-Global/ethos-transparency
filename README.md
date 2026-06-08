@@ -2,7 +2,7 @@
 
 **Ethos ESI** (Ethical Specialized Intelligence) is SustainAI Global's specialist AI for sustainable economics, renewable energy, green finance, and a just transition. Its ethical foundation is [The Charter for Beneficial Intelligence](CHARTER.md): ten principles governing how Ethos reasons and serves. This public repository documents **how and why** we build Ethos: methodology, values, architecture, access policy, and transparency artifacts.
 
-**SustainAI Global** is a Texas nonprofit corporation (501(c)(3) pending) dedicated to public-good AI. Learn more at [sustainai.global](https://sustainai.global/).
+**SustainAI Global** is a Texas nonprofit corporation (501(c)(3) pending) dedicated to ensuring AI expands human opportunity rather than shrinking it. Learn more at [sustainai.global](https://sustainai.global/).
 
 > **Canonical source:** Technical architecture, training pipelines, and deployment details live in the private [`ethos-esi`](https://github.com/SustainAI-Global/ethos-esi) repo. This repository is a **read-only mirror** of approved public artifacts.
 

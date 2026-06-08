@@ -1,6 +1,8 @@
 # SustainAI Global — Mission
 
-SustainAI Global is a Texas nonprofit corporation (501(c)(3) pending) building AI for the **public good**. Our mission is to advance ethical, specialized intelligence that strengthens economies, protects the planet, and expands opportunity for people — not to concentrate power in a few platforms or accelerate a jobless future.
+SustainAI Global is a Texas nonprofit corporation (501(c)(3) pending) dedicated to ensuring AI expands human opportunity rather than shrinking it. We advance education, workforce upskilling, ethical AI research, and sustainable compute so that advanced intelligence creates more meaningful jobs than it displaces — powered by renewable energy and designed in true partnership with humanity.
+
+**Founding principle:** More jobs than displaced. Pro-human progress.
 
 Learn more and get involved at [sustainai.global](https://sustainai.global/).
 
